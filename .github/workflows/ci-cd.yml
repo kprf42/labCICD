@@ -28,6 +28,7 @@ jobs:
 
       - name: Check application imports
         run: |
+          cd app/src       
           python -c "from main import app" || exit 1
           python -c "from database import get_db" || exit 1
           python -c "from models import Author, Book" || exit 1
@@ -72,7 +73,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           cd app/src
-          pytest test_main.py --cov=. --cov-report=term --cov-report=html --cov-fail-under=50
+          pytest testMain.py --cov=. --cov-report=term --cov-report=html --cov-fail-under=50
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
