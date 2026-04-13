@@ -67,6 +67,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install httpx  
           pip install pytest pytest-cov
           pip install -r app/src/requirements.txt
 
