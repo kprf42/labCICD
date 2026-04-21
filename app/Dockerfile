@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
 
-COPY src/ .
+COPY app/src/ .
 
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
