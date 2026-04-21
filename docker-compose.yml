@@ -18,7 +18,9 @@ services:
     restart: unless-stopped
 
   app:
-    build: ./app
+    build:     
+      context: .
+      dockerfile: app/Dockerfile
     container_name: library_fastapi
     ports:
       - "8000:8000"  
